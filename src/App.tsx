@@ -1,51 +1,47 @@
-import {useState} from "react";
-import reactLogo from "./assets/react.svg";
-import {invoke} from "@tauri-apps/api/core";
-import "./App.css";
+import '@mantine/core/styles.css';
+import '@mantine/notifications/styles.css';
+import '@mantine/dates/styles.css';
+import {createTheme, Input, MantineProvider} from '@mantine/core';
+import {Notifications} from "@mantine/notifications";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import RootPage from "./page/RootPage.tsx";
+import classes from "./css/Label.module.css"
+import StudentPage from "./page/StudentPage.tsx";
 
-function App() {
-    const [greetMsg, setGreetMsg] = useState("");
-    const [name, setName] = useState("");
-
-    async function greet() {
-        // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-        setGreetMsg(await invoke("greet", {name}));
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <RootPage/>,
+        children: [
+            {
+                index: true,
+                element: <StudentPage/>
+            }
+        ]
     }
+])
 
-    return (
-        <main className="container">
-            <h1>Welcome to Tauri + React</h1>
+const theme = createTheme({
+    fontSmoothing: true,
+    fontFamily: 'Nunito, sans-serif',
+    primaryColor: 'blue',
+    components: {
+        Input: Input.extend({
+            classNames: {
+                input: classes.input,
+            },
+        }),
+        InputWrapper: Input.Wrapper.extend({
+            classNames: {
+                label: classes.label,
+            },
+        })
+    }
+});
 
-            <div className="row">
-                <a href="https://vitejs.dev" target="_blank">
-                    <img src="/vite.svg" className="logo vite" alt="Vite logo"/>
-                </a>
-                <a href="https://tauri.app" target="_blank">
-                    <img src="/tauri.svg" className="logo tauri" alt="Tauri logo"/>
-                </a>
-                <a href="https://reactjs.org" target="_blank">
-                    <img src={reactLogo} className="logo react" alt="React logo"/>
-                </a>
-            </div>
-            <p>Click on the Tauri, Vite, and React logos to learn more.</p>
-
-            <form
-                className="row"
-                onSubmit={(e) => {
-                    e.preventDefault();
-                    greet();
-                }}
-            >
-                <input
-                    id="greet-input"
-                    onChange={(e) => setName(e.currentTarget.value)}
-                    placeholder="Enter a name..."
-                />
-                <button type="submit">Greet</button>
-            </form>
-            <p>{greetMsg}</p>
-        </main>
-    );
+export default function App() {
+    return <MantineProvider theme={theme}>
+        <Notifications/>
+        <RouterProvider router={router}/>
+    </MantineProvider>
 }
-
-export default App;
