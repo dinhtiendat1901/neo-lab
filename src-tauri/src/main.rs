@@ -46,19 +46,19 @@ impl ExternalProcess {
 }
 
 fn main() {
-    let redis_server = Arc::new(Mutex::new(ExternalProcess::new(
-        "./binaries/Redis-7.4.1-Windows-x64-cygwin/redis-server.exe",
-        &["--port", "6379"],
+    let playwright_server = Arc::new(Mutex::new(ExternalProcess::new(
+        "./binaries/playwright-server-win.exe",
+        &[],
     )));
 
-    let redis_server_clone = Arc::clone(&redis_server);
+    let playwright_server_clone = Arc::clone(&playwright_server);
 
     tauri::Builder::default()
         .on_window_event(move |_window, event| {
             if let tauri::WindowEvent::CloseRequested { .. } = event {
                 println!("Window close requested. Killing external processes...");
                 {
-                    let mut server = redis_server_clone.lock().unwrap();
+                    let mut server = playwright_server_clone.lock().unwrap();
                     server.kill();
                 }
             }
