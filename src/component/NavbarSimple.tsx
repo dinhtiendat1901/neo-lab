@@ -1,17 +1,17 @@
 import {useState} from 'react';
 import {Code, Group, Text} from '@mantine/core';
-import {IconBrandChrome} from '@tabler/icons-react';
+import {IconRobot} from '@tabler/icons-react';
 
 import classes from '../css/NavbarSimple.module.css';
 import {Link} from "react-router-dom";
 
 const data = [
-    {link: '/', label: 'Students', icon: IconBrandChrome},
+    {link: '/', label: 'Agent', icon: IconRobot},
 
 ];
 
 export default function NavbarSimple() {
-    const [active, setActive] = useState('Students');
+    const [active, setActive] = useState('Agent');
 
     const links = data.map((item) => (
         <Link

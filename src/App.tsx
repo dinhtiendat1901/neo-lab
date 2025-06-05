@@ -6,7 +6,7 @@ import {Notifications} from "@mantine/notifications";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import RootPage from "./page/RootPage.tsx";
 import classes from "./css/Label.module.css"
-import StudentPage from "./page/StudentPage.tsx";
+import AgentPage from "./page/AgentPage.tsx";
 
 const router = createBrowserRouter([
     {
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <StudentPage/>
+                element: <AgentPage/>
             }
         ]
     }
