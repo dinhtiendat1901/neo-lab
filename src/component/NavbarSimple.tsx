@@ -1,12 +1,13 @@
 import {useState} from 'react';
 import {Code, Group, Text} from '@mantine/core';
-import {IconRobot} from '@tabler/icons-react';
+import {IconFileUpload, IconRobot} from '@tabler/icons-react';
 
 import classes from '../css/NavbarSimple.module.css';
 import {Link} from "react-router-dom";
 
 const data = [
     {link: '/', label: 'Agent', icon: IconRobot},
+    {link: '/embedding', label: 'Embedding', icon: IconFileUpload}
 
 ];
 

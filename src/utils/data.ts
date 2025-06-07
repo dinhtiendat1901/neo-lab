@@ -6,6 +6,15 @@ export interface Agent {
 }
 
 
+export interface Embedding {
+    id: number,
+    name: string,
+    type: string,
+    chunkSize: number,
+    chunkOverlap: number
+}
+
+
 export const listAgentData: Agent[] = [
     {
         id: 1,
@@ -86,3 +95,20 @@ export const listAgentData: Agent[] = [
         description: "Conducts aerial reconnaissance and support operations."
     }
 ];
+
+
+export const listEmbeddingData: Embedding[] = [
+    {id: 1, name: "report1.docx", type: "docx", chunkSize: 500, chunkOverlap: 50},
+    {id: 2, name: "report2.pdf", type: "pdf", chunkSize: 450, chunkOverlap: 40},
+    {id: 3, name: "report3.excel", type: "excel", chunkSize: 600, chunkOverlap: 60},
+    {id: 4, name: "report4.docx", type: "docx", chunkSize: 550, chunkOverlap: 55},
+    {id: 5, name: "report5.pdf", type: "pdf", chunkSize: 480, chunkOverlap: 48},
+    {id: 6, name: "report6.excel", type: "excel", chunkSize: 620, chunkOverlap: 62},
+    {id: 7, name: "report7.docx", type: "docx", chunkSize: 530, chunkOverlap: 53},
+    {id: 8, name: "report8.pdf", type: "pdf", chunkSize: 470, chunkOverlap: 47},
+    {id: 9, name: "report9.excel", type: "excel", chunkSize: 610, chunkOverlap: 61},
+    {id: 10, name: "report10.docx", type: "docx", chunkSize: 520, chunkOverlap: 52},
+    {id: 11, name: "report11.pdf", type: "pdf", chunkSize: 460, chunkOverlap: 46},
+    {id: 12, name: "report12.excel", type: "excel", chunkSize: 630, chunkOverlap: 63},
+    {id: 13, name: "report13.docx", type: "docx", chunkSize: 540, chunkOverlap: 54}
+]

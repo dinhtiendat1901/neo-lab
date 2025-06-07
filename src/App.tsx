@@ -1,12 +1,16 @@
 import '@mantine/core/styles.css';
 import '@mantine/notifications/styles.css';
 import '@mantine/dates/styles.css';
+import '@mantine/dropzone/styles.css';
+import '@xyflow/react/dist/style.css';
 import {createTheme, Input, MantineProvider} from '@mantine/core';
 import {Notifications} from "@mantine/notifications";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import RootPage from "./page/RootPage.tsx";
 import classes from "./css/Label.module.css"
 import AgentPage from "./page/AgentPage.tsx";
+import EmbeddingPage from "./page/EmbeddingPage.tsx";
+
 
 const router = createBrowserRouter([
     {
@@ -16,6 +20,10 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <AgentPage/>
+            },
+            {
+                path: 'embedding',
+                element: <EmbeddingPage/>
             }
         ]
     }
