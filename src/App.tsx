@@ -10,6 +10,7 @@ import RootPage from "./page/RootPage.tsx";
 import classes from "./css/Label.module.css"
 import AgentPage from "./page/AgentPage.tsx";
 import EmbeddingPage from "./page/EmbeddingPage.tsx";
+import MultiAgentPage from "./page/MultiAgentPage.tsx";
 
 
 const router = createBrowserRouter([
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
             {
                 path: 'embedding',
                 element: <EmbeddingPage/>
+            },
+            {
+                path: 'multi-agent',
+                element: <MultiAgentPage/>
             }
         ]
     }

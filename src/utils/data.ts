@@ -5,6 +5,13 @@ export interface Agent {
     description: string
 }
 
+export interface MultiAgent {
+    id: number,
+    name: string,
+    leader: string,
+    agentCount: number
+}
+
 
 export interface Embedding {
     id: number,
@@ -112,3 +119,20 @@ export const listEmbeddingData: Embedding[] = [
     {id: 12, name: "report12.excel", type: "excel", chunkSize: 630, chunkOverlap: 63},
     {id: 13, name: "report13.docx", type: "docx", chunkSize: 540, chunkOverlap: 54}
 ]
+
+
+export const listMultiAgentData: MultiAgent[] = [
+    {id: 1, name: 'Alpha Team', leader: 'Alice Johnson', agentCount: 5},
+    {id: 2, name: 'Beta Squad', leader: 'Bob Smith', agentCount: 8},
+    {id: 3, name: 'Gamma Group', leader: 'Carol Davis', agentCount: 12},
+    {id: 4, name: 'Delta Force', leader: 'David Wilson', agentCount: 7},
+    {id: 5, name: 'Epsilon Unit', leader: 'Eve Martinez', agentCount: 10},
+    {id: 6, name: 'Zeta Division', leader: 'Frank Brown', agentCount: 6},
+    {id: 7, name: 'Eta Crew', leader: 'Grace Lee', agentCount: 9},
+    {id: 8, name: 'Theta Patrol', leader: 'Hank Clark', agentCount: 11},
+    {id: 9, name: 'Iota Team', leader: 'Irene Lewis', agentCount: 4},
+    {id: 10, name: 'Kappa Unit', leader: 'John Walker', agentCount: 13},
+    {id: 11, name: 'Lambda Squad', leader: 'Karen Hall', agentCount: 3},
+    {id: 12, name: 'Mu Group', leader: 'Luke Young', agentCount: 15},
+    {id: 13, name: 'Nu Force', leader: 'Mona King', agentCount: 14}
+];
