@@ -11,6 +11,7 @@ import classes from "./css/Label.module.css"
 import AgentPage from "./page/AgentPage.tsx";
 import EmbeddingPage from "./page/EmbeddingPage.tsx";
 import MultiAgentPage from "./page/MultiAgentPage.tsx";
+import FlowPage from "./page/FlowPage.tsx";
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
             {
                 path: 'multi-agent',
                 element: <MultiAgentPage/>
+            },
+            {
+                path: 'flow',
+                element: <FlowPage/>
             }
         ]
     }

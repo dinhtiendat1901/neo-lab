@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {Code, Group, Text} from '@mantine/core';
-import {IconFileUpload, IconRobot, IconSitemap} from '@tabler/icons-react';
+import {IconFileUpload, IconRobot, IconRocket, IconSitemap} from '@tabler/icons-react';
 
 import classes from '../css/NavbarSimple.module.css';
 import {Link} from "react-router-dom";
@@ -8,7 +8,8 @@ import {Link} from "react-router-dom";
 const data = [
     {link: '/', label: 'Agent', icon: IconRobot},
     {link: '/embedding', label: 'Embedding', icon: IconFileUpload},
-    {link: '/multi-agent', label: 'Multi-Agent', icon: IconSitemap}
+    {link: '/multi-agent', label: 'Multi-Agent', icon: IconSitemap},
+    {link: '/flow', label: 'Flow', icon: IconRocket},
 
 ];
 
